@@ -2,8 +2,7 @@
 
 
 class Solution:
-    @staticmethod
-    def run(nums, target):
+    def twoSum(self, nums, target):
         map = {}
         for i, el in enumerate(nums):
             key = target - el
