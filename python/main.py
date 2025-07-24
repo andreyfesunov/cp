@@ -8,6 +8,21 @@ def run_problem(problem_id, module):
 
 
 if __name__ == "__main__":
-    problem_id = input("problem_id: ")
+    import os
 
-    run_problem(problem_id, f"./leetcode/{problem_id}.py")
+    module_path = "./leetcode"
+
+    def get_max_module_number():
+        submodules = []
+        for filename in os.listdir(module_path):
+            if filename.endswith(".py"):
+                name = filename[:-3]
+                if name.isdigit():
+                    submodules.append(int(name))
+        return max(submodules) if submodules else 0
+
+    max_module_number = get_max_module_number()
+
+    problem_id = input(f"problem_id: ({max_module_number})") or max_module_number
+
+    run_problem(problem_id, f"{module_path}/{problem_id}.py")
