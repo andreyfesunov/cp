@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
     max_module_number = get_max_module_number()
 
-    problem_id = input(f"problem_id: ({max_module_number})") or max_module_number
+    problem_id = input(f"problem_id ({max_module_number}): ") or max_module_number
 
     run_problem(problem_id, f"{module_path}/{problem_id}.py")
