@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 func countSubsets(
 	memo map[int]map[int]int,
@@ -28,7 +28,7 @@ func countSubsets(
 	return result
 }
 
-func countMaxOrSubsets(nums []int) int {
+func CountMaxOrSubsets(nums []int) int {
 	memo := make(map[int]map[int]int)
 	max_v := 0
 
@@ -37,8 +37,4 @@ func countMaxOrSubsets(nums []int) int {
 	}
 
 	return countSubsets(memo, nums, 0, 0, max_v)
-}
-
-func main() {
-	println(countMaxOrSubsets([]int{3, 1}))
 }
