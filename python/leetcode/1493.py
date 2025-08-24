@@ -13,3 +13,5 @@ class Solution:
                 start += 1
 
             longest = max(longest, i - start)
+
+        return longest
