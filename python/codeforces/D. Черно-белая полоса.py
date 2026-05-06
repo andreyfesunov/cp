@@ -7,10 +7,10 @@ for _ in range(int(input())):
     prefix = [0, *list(accumulate(board))]
 
     result = n
-    ptr = k + 1
+    ptr = k
 
-    while ptr <= n + 1:
-        painted = prefix[ptr - 1] - prefix[ptr - k - 1]
+    while ptr <= n:
+        painted = prefix[ptr] - prefix[ptr - k]
         result = min(result, painted)
         ptr += 1
 
